@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WZg-21-627">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--होम-->
+        <scene sceneID="sLc-f2-gey">
+            <objects>
+                <viewController storyboardIdentifier="DashboardVC" id="Cv8-pT-Dc5" customClass="DashboardVC" customModule="agni" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8cU-Cu-9XH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="9pw-1k-Oaa"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="होम" id="ZEO-rk-c7z">
+                        <barButtonItem key="backBarButtonItem" title=" " id="dJP-sb-kA3"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="menu" id="5fz-8C-c1y">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="openSliderMenu:" destination="Cv8-pT-Dc5" id="5Vg-8R-oPe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zAo-Zh-OXa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3383" y="-468"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="vfB-6H-uWh">
+            <objects>
+                <viewController storyboardIdentifier="MXScrollingViewController" id="Mzu-yt-wIz" customClass="MXScrollingViewController" customModule="agni" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ia6-SR-ZaM" customClass="MXScrollView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="6VO-Wo-unu"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Main" id="RC4-GT-tnp"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="headerHeight">
+                            <integer key="value" value="200"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="headerMinimumHeight">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="Cv8-pT-Dc5" kind="custom" identifier="dribble_view" customClass="MXScrollViewControllerSegue" id="Hng-pL-d6s"/>
+                        <segue destination="9iV-hS-Zil" kind="custom" identifier="parallax_header" customClass="MXParallaxHeaderSegue" id="Xeb-OP-ol9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qcB-S1-kar" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2338" y="-468"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="Kxw-8h-vyn">
+            <objects>
+                <viewController id="JC6-Z0-mKy" customClass="MXSliderViewController" customModule="agni" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qEP-dy-Gk6"/>
+                        <viewControllerLayoutGuide type="bottom" id="0xo-YW-xCS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8EN-2g-4HG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pdm-Z4-nJc" customClass="ImageSlideshow" customModule="ImageSlideshow">
+                                <rect key="frame" x="0.0" y="44" width="375" height="256"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Pdm-Z4-nJc" firstAttribute="leading" secondItem="nnJ-Ke-4sW" secondAttribute="leading" id="9TQ-Vw-WYx"/>
+                            <constraint firstItem="0xo-YW-xCS" firstAttribute="top" secondItem="Pdm-Z4-nJc" secondAttribute="bottom" id="ax0-nG-O4X"/>
+                            <constraint firstItem="nnJ-Ke-4sW" firstAttribute="trailing" secondItem="Pdm-Z4-nJc" secondAttribute="trailing" id="kIr-eA-Ea8"/>
+                            <constraint firstItem="Pdm-Z4-nJc" firstAttribute="top" secondItem="qEP-dy-Gk6" secondAttribute="bottom" id="lcA-CW-k6p"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nnJ-Ke-4sW"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Home" id="t0w-Hx-LIf">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="XlI-Ps-ypK">
+                            <connections>
+                                <action selector="openSliderMenu:" destination="JC6-Z0-mKy" id="0MO-kM-nsl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="300"/>
+                    <connections>
+                        <outlet property="slide" destination="Pdm-Z4-nJc" id="QM1-Wf-aaC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aor-2f-JCH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4320.8000000000002" y="87.256371814092958"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Nem-nd-fpk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yIw-4D-b1D" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kk0-RX-hps">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hfP-cQ-Goe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4065" y="707"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eeb-xO-VtK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WZg-21-627" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="08V-Fk-hV8">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.67635943470000004" blue="0.36843994860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Mzu-yt-wIz" kind="relationship" relationship="rootViewController" id="oAP-6o-4Gw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qlK-Mb-g0I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1480.8" y="-483.50824587706148"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fMr-pg-e4B">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9iV-hS-Zil" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jo7-Zj-c7o">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="JC6-Z0-mKy" kind="relationship" relationship="rootViewController" id="B8I-9e-z7E"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hse-jO-Fmb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3381.5999999999999" y="87.706146926536732"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="menu" width="16" height="16"/>
+    </resources>
+</document>
